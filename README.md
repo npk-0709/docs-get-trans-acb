@@ -19,6 +19,7 @@ TYPE: Loại giao dịch, có thể là "IN" (vào) hoặc "OUT" (ra).
 DESCRIPTION: Mô tả của giao dịch.
 CURRENCY: Đơn vị tiền tệ của giao dịch.
 DATE: Ngày thực hiện giao dịch.
+```json
 [
     {
         "ID": "123456789",
@@ -37,3 +38,4 @@ DATE: Ngày thực hiện giao dịch.
         "DATE": "2024-06-12T15:30:00Z"
     }
 ]
+```
