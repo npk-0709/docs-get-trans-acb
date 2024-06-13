@@ -20,16 +20,18 @@ POST https://apikey.phukhuong79.com/libs/transACB.php
 Content-Type: application/x-www-form-urlencoded
 
 username=your_username&password=your_password&account=your_account_number&row=number_of_transactions
-
-Định Dạng Phản Hồi
+```
+###Định Dạng Phản Hồi
 Phản hồi từ API sẽ là một đối tượng JSON chứa danh sách các giao dịch. Mỗi giao dịch bao gồm các thông tin sau:
 
-ID: ID của giao dịch.
-AMOUNT: Số tiền giao dịch.
-TYPE: Loại giao dịch, có thể là "IN" (vào) hoặc "OUT" (ra).
-DESCRIPTION: Mô tả của giao dịch.
-CURRENCY: Đơn vị tiền tệ của giao dịch.
-DATE: Ngày thực hiện giao dịch.
+- `ID`: ID của giao dịch.
+- `AMOUNT`: Số tiền giao dịch.
+- `TYPE`: Loại giao dịch, có thể là "IN" (vào) hoặc "OUT" (ra).
+- `DESCRIPTION`: Mô tả của giao dịch.
+- `CURRENCY`: Đơn vị tiền tệ của giao dịch.
+- `DATE`: Ngày thực hiện giao dịch.
+
+###Ví Dụ Phản Hồi
 ```json
 [
     {
