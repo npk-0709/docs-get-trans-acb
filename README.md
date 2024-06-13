@@ -1,14 +1,25 @@
-Hướng Dẫn Sử Dụng API
-POST: https://apikey.phukhuong79.com/libs/transACB.php
+# Hướng Dẫn Sử Dụng API
+
+## POST: [https://apikey.phukhuong79.com/libs/transACB.php](https://apikey.phukhuong79.com/libs/transACB.php)
+
 API này cho phép bạn lấy thông tin các giao dịch từ tài khoản của bạn.
 
-Tham Số Yêu Cầu
+### Tham Số Yêu Cầu
+
 Khi gửi yêu cầu POST đến API, bạn cần cung cấp các tham số sau:
 
-username: Tên đăng nhập của bạn.
-password: Mật khẩu của bạn.
-account: Số tài khoản mà bạn muốn truy vấn.
-row: Số lượng giao dịch mà bạn muốn lấy.
+- `username`: Tên đăng nhập của bạn.
+- `password`: Mật khẩu của bạn.
+- `account`: Số tài khoản mà bạn muốn truy vấn.
+- `row`: Số lượng giao dịch mà bạn muốn lấy.
+
+### Ví Dụ Yêu Cầu
+
+```http
+POST https://apikey.phukhuong79.com/libs/transACB.php
+Content-Type: application/x-www-form-urlencoded
+
+username=your_username&password=your_password&account=your_account_number&row=number_of_transactions
 
 Định Dạng Phản Hồi
 Phản hồi từ API sẽ là một đối tượng JSON chứa danh sách các giao dịch. Mỗi giao dịch bao gồm các thông tin sau:
