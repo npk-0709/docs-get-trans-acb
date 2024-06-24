@@ -1,30 +1,39 @@
 # Hướng Dẫn Sử Dụng API
 
-## GET: [https://apikey.phukhuong79.com/api/getTransACB.php](https://apikey.phukhuong79.com/api/getTransACB.php)
+## GET|POST: [https://apikey.phukhuong79.com/api/getTransACB.php](https://apikey.phukhuong79.com/api/getTransACB.php)
 
 API này cho phép bạn lấy thông tin các giao dịch từ tài khoản của bạn.
 
 ### Tham Số Yêu Cầu
 
-Khi gửi yêu cầu POST đến API, bạn cần cung cấp các tham số sau:
+Khi gửi yêu cầu POST|GET đến API, bạn cần cung cấp các tham số sau:
 
 - `username`: Tên đăng nhập của bạn.
 - `password`: Mật khẩu của bạn.
 - `account`: Số tài khoản mà bạn muốn truy vấn.
 - `row`: Số lượng giao dịch mà bạn muốn lấy.
+- 
+### Hoặc truyền vào chuỗi đã mã hóa 
+- `base64` : chuỗi mã hóa theo base64 định dạng "username|password|account_number|row(số giao dịch)"
 
 ### Ví Dụ Yêu Cầu
 
 ```python
 import requests
+import base64
+
 url = "https://apikey.phukhuong79.com/api/getTransACB.php"
-payload = {
+payload_1 = {
     'username': 'your_username',
     'password': 'your_password',
     'account': 'your_account_number',
     'row': 10  # Số lượng giao dịch muốn lấy
 }
-response = requests.post(url, data=payload)
+payload_2 = {
+    'base64': base64.b64encode("username|password|99988777|10".encode())
+}
+response = requests.post(url, data=payload_1) # lấy trực tiếp 
+#response = requests.post(url, data=payload_2) # thông qua mã hóa
 if response.status_code == 200:
     transactions = response.json()
     print(transactions)
