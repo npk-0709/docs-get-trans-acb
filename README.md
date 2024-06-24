@@ -6,15 +6,16 @@ API này cho phép bạn lấy thông tin các giao dịch từ tài khoản c�
 
 ### Tham Số Yêu Cầu
 
-Khi gửi yêu cầu POST|GET đến API, bạn cần cung cấp các tham số sau:
+Khi gửi yêu cầu GET|POST đến API, bạn cần cung cấp các tham số sau:
 
+### GET
 - `username`: Tên đăng nhập của bạn.
 - `password`: Mật khẩu của bạn.
 - `account`: Số tài khoản mà bạn muốn truy vấn.
 - `row`: Số lượng giao dịch mà bạn muốn lấy.
-- 
-### Hoặc truyền vào chuỗi đã mã hóa 
-- `base64` : chuỗi mã hóa theo base64 định dạng "username|password|account_number|row(số giao dịch)"
+
+### POST
+- `base64` : chuỗi mã hóa theo base64 định dạng "username|password|account_number|row(số giao dịch)" .
 
 ### Ví Dụ Yêu Cầu
 
